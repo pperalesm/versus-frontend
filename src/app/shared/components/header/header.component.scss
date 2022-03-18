@@ -1,0 +1,20 @@
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.horizontal-line {
+  margin-top: 0px;
+  border-color: #ba6;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}

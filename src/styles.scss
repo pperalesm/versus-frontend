@@ -1,0 +1,21 @@
+html, body {
+  margin:0;
+  padding:0;
+}
+
+button:active{
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.silver-button{
+  border: 1px solid #7c7c7c !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(#929292));
+  font-weight: bold;
+}
+
+.gold-button{
+  border: 1px solid #ba6 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgb(170, 145, 43)));
+  font-weight: bold;
+}
