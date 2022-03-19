@@ -1,35 +1,37 @@
-<div class="header">
-  <div class="container">
-    <img class="logo" src="favicon.ico" routerLink="/" />
-    <button mat-raised-button color="primary">
-      {{ "Home" | translate }}
-    </button>
-    <button mat-raised-button color="primary">Whatever</button>
-    <button mat-raised-button color="primary">Example</button>
-    <button mat-raised-button color="primary">Fuck Off</button>
-  </div>
-  <div class="container">
-    <button mat-raised-button color="accent">
-      {{ "LogIn" | translate }}
-    </button>
-    <button mat-raised-button color="accent">
-      {{ "SignUp" | translate }}
-    </button>
-    <mat-form-field color="accent">
-      <mat-select
-        color="accent"
-        (selectionChange)="switchLanguage($event)"
-        [value]="translate.getDefaultLang()"
-      >
-        <mat-option
+<div class="header-wrapper">
+  <div class="header">
+    <div class="container">
+      <img class="logo" src="favicon.ico" routerLink="/" />
+      <button mat-raised-button color="primary">
+        {{ "Home" | translate }}
+      </button>
+      <button mat-raised-button color="primary">Whatever</button>
+      <button mat-raised-button color="primary">Example</button>
+      <button mat-raised-button color="primary">Fuck Off</button>
+    </div>
+    <div class="container">
+      <button mat-raised-button color="accent">
+        {{ "LogIn" | translate }}
+      </button>
+      <button mat-raised-button color="accent">
+        {{ "SignUp" | translate }}
+      </button>
+      <mat-form-field color="accent">
+        <mat-select
           color="accent"
-          *ngFor="let language of translate.getLangs()"
-          [value]="language"
+          (selectionChange)="switchLanguage($event)"
+          [value]="translate.getDefaultLang()"
         >
-          {{ language | translate }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+          <mat-option
+            color="accent"
+            *ngFor="let language of translate.getLangs()"
+            [value]="language"
+          >
+            {{ language | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
+  <mat-divider></mat-divider>
 </div>
-<mat-divider></mat-divider>

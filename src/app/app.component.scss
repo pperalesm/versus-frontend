@@ -1,0 +1,9 @@
+.screen-wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: calc(100vh - 70px - 1px);
+}
+
+.site-content {
+  flex: 1 1 auto;
+}
