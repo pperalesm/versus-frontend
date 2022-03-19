@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 @include mat.core();
 
 $silver-palette: (
@@ -22,8 +22,8 @@ $silver-palette: (
     600: white,
     700: white,
     800: white,
-    900: white
-  )
+    900: white,
+  ),
 );
 
 $gold-palette: (
@@ -47,8 +47,8 @@ $gold-palette: (
     600: white,
     700: white,
     800: white,
-    900: white
-  )
+    900: white,
+  ),
 );
 
 $my-primary: mat.define-palette($silver-palette, 500);
@@ -61,11 +61,13 @@ $darker-accent: mat.get-color-from-palette($my-accent, "darker");
 $lighter-primary: mat.get-color-from-palette($my-primary, "lighter");
 $lighter-accent: mat.get-color-from-palette($my-accent, "lighter");
 
-$my-theme: mat.define-dark-theme((
-  color: (
-    primary: $my-primary,
-    accent: $my-accent,
+$my-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
   )
-));
+);
 
 @include mat.all-component-themes($my-theme);

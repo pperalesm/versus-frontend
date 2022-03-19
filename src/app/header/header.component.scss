@@ -1,10 +1,11 @@
+@import "./../../themes.scss";
+
 button {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .header {
-  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +16,7 @@ button {
   height: 40px;
   position: sticky;
   top: 0px;
+  border-bottom: solid $default-accent 1px;
 }
 
 .container {

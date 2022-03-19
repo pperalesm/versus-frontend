@@ -1,24 +1,41 @@
 @use "sass:color";
-@import 'themes.scss';
+@import "themes.scss";
 
-html, body {
-  margin:0;
-  padding:0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-button:active{
+button:active {
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
 }
 
+.overlay {
+  background-color: rgb(15, 15, 15);
+}
+
 .mat-raised-button.mat-primary {
   border: 1px solid $default-primary;
-  background: -webkit-gradient(linear, right bottom, left top, from(color.adjust($default-primary, $lightness: -40%)), to($default-primary));
+  background: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(color.adjust($default-primary, $lightness: -40%)),
+    to($default-primary)
+  );
   text-shadow: 1px 1px 0 #000;
 }
 
 .mat-raised-button.mat-accent {
   border: 1px solid $default-accent;
-  background: -webkit-gradient(linear, right bottom, left top, from(color.adjust($default-accent, $lightness: -40%)), to($default-accent));
+  background: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(color.adjust($default-accent, $lightness: -40%)),
+    to($default-accent)
+  );
   text-shadow: 1px 1px 0 #000;
 }
