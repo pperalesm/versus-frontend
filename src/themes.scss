@@ -1,0 +1,71 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$silver-palette: (
+  50: #fcfbff,
+  100: #f7f6fa,
+  200: #f2f1f6,
+  300: #eae9ed,
+  400: #c8c7cb,
+  500: #aaa9ad,
+  600: #807f83,
+  700: #6b6b6e,
+  800: #4c4b4e,
+  900: #2a292c,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+
+$gold-palette: (
+  50: #f9fae7,
+  100: #f2f2c4,
+  200: #e9e99d,
+  300: #e2e179,
+  400: #dddc5f,
+  500: #d9d648,
+  600: #d7c541,
+  700: #d4af37,
+  800: #d09a2d,
+  900: #c9761c,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+
+$my-primary: mat.define-palette($silver-palette, 500);
+$my-accent: mat.define-palette($gold-palette, 700);
+
+$default-primary: mat.get-color-from-palette($my-primary, "default");
+$default-accent: mat.get-color-from-palette($my-accent, "default");
+$darker-primary: mat.get-color-from-palette($my-primary, "darker");
+$darker-accent: mat.get-color-from-palette($my-accent, "darker");
+$lighter-primary: mat.get-color-from-palette($my-primary, "lighter");
+$lighter-accent: mat.get-color-from-palette($my-accent, "lighter");
+
+$my-theme: mat.define-dark-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+  )
+));
+
+@include mat.all-component-themes($my-theme);

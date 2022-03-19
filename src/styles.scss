@@ -1,3 +1,6 @@
+@use "sass:color";
+@import 'themes.scss';
+
 html, body {
   margin:0;
   padding:0;
@@ -8,16 +11,16 @@ button:active{
   transform: translateY(2px);
 }
 
-.silver-button{
-  border: 1px solid #aaa9ad !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(#38383a), to(#aaa9ad));
+.mat-raised-button.mat-primary {
+  border: 1px solid $default-primary;
+  background: -webkit-gradient(linear, left top, left bottom, from(color.adjust($default-primary, $lightness: -40%)), to($default-primary));
   text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
   font-weight: bold;
 }
 
-.gold-button{
-  border: 1px solid #d4af37 !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3b310f), to(#d4af37));
+.mat-raised-button.mat-accent {
+  border: 1px solid $default-accent;
+  background: -webkit-gradient(linear, left top, left bottom, from(color.adjust($default-accent, $lightness: -40%)), to($default-accent));
   text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
   font-weight: bold;
 }

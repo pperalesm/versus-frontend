@@ -1,4 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,9 @@ export class AppComponent {
     return false;
   }
   title = 'versus-frontend';
+
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('en');
+  }
 }

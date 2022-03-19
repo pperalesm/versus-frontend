@@ -1,3 +1,8 @@
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .header {
   background-color: black;
   display: flex;
@@ -11,10 +16,9 @@
 
 .horizontal-line {
   margin-top: 0px;
-  border-color: #aaa9ad;
 }
 
-button {
-  margin-left: 10px;
-  margin-right: 10px;
+.mat-form-field {
+  margin-left: 30px;
+  width: 100px;
 }
