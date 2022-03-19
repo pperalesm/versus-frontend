@@ -13,14 +13,12 @@ button:active{
 
 .mat-raised-button.mat-primary {
   border: 1px solid $default-primary;
-  background: -webkit-gradient(linear, left top, left bottom, from(color.adjust($default-primary, $lightness: -40%)), to($default-primary));
-  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
-  font-weight: bold;
+  background: -webkit-gradient(linear, right bottom, left top, from(color.adjust($default-primary, $lightness: -40%)), to($default-primary));
+  text-shadow: 1px 1px 0 #000;
 }
 
 .mat-raised-button.mat-accent {
   border: 1px solid $default-accent;
-  background: -webkit-gradient(linear, left top, left bottom, from(color.adjust($default-accent, $lightness: -40%)), to($default-accent));
-  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
-  font-weight: bold;
+  background: -webkit-gradient(linear, right bottom, left top, from(color.adjust($default-accent, $lightness: -40%)), to($default-accent));
+  text-shadow: 1px 1px 0 #000;
 }

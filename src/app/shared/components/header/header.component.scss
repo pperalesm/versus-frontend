@@ -10,8 +10,19 @@ button {
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 300px;
+  padding-right: 300px;
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 40px;
+  cursor: pointer;
 }
 
 .horizontal-line {
@@ -19,6 +30,6 @@ button {
 }
 
 .mat-form-field {
-  margin-left: 30px;
+  margin-left: 40px;
   width: 100px;
 }
