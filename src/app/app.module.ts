@@ -10,7 +10,6 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -28,7 +27,6 @@ import { MatDividerModule } from '@angular/material/divider';
     }),
     MatButtonModule,
     MatSelectModule,
-    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
