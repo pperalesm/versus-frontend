@@ -9,13 +9,15 @@ button:active{
 }
 
 .silver-button{
-  border: 1px solid #7c7c7c !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(#929292));
+  border: 1px solid #aaa9ad !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#38383a), to(#aaa9ad));
+  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
   font-weight: bold;
 }
 
 .gold-button{
-  border: 1px solid #ba6 !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgb(170, 145, 43)));
+  border: 1px solid #d4af37 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3b310f), to(#d4af37));
+  text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
   font-weight: bold;
 }
