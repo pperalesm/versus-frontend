@@ -3,6 +3,11 @@ button {
   margin-right: 10px;
 }
 
+.header-wrapper {
+  position: sticky;
+  top: 0px;
+}
+
 .header {
   background-color: black;
   display: flex;
@@ -25,11 +30,7 @@ button {
   cursor: pointer;
 }
 
-.horizontal-line {
-  margin-top: 0px;
-}
-
 .mat-form-field {
   margin-left: 40px;
-  width: 100px;
+  width: 70px;
 }
