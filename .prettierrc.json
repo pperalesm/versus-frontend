@@ -1,1 +1,6 @@
-{ "htmlWhitespaceSensitivity": "ignore" }
+{
+  "htmlWhitespaceSensitivity": "ignore",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "es5"
+}

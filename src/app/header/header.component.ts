@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   switchLanguage(change: MatSelectChange) {
     this.translate.use(change.value);
