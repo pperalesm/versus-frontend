@@ -16,7 +16,7 @@ button {
   height: 40px;
   position: sticky;
   top: 0px;
-  border-bottom: solid $default-accent 1px;
+  border-bottom: solid $default-primary 1px;
 }
 
 .container {
@@ -30,6 +30,23 @@ button {
 }
 
 .mat-form-field {
+  padding-top: 5px;
   margin-left: 40px;
-  width: 70px;
+  width: 40px;
 }
+
+.country-flag {
+  margin-top: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.en {
+  background: url("/assets/flags/en.svg") no-repeat;
+  margin-left: 5px;
+}
+
+.es {
+  background: url("/assets/flags/es.svg") no-repeat;
+  margin-left: 5px;
+ }

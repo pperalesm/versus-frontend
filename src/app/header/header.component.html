@@ -15,18 +15,23 @@
     <button mat-raised-button color="accent">
       {{ "SignUp" | translate }}
     </button>
-    <mat-form-field color="accent">
+    <mat-form-field color="primary">
       <mat-select
-        color="accent"
+        color="primary"
         (selectionChange)="switchLanguage($event)"
-        [value]="translate.getDefaultLang()"
+        [value]="selectedLanguage"
+        [ngClass]="selectedLanguage"
       >
         <mat-option
-          color="accent"
+          color="primary"
           *ngFor="let language of translate.getLangs()"
           [value]="language"
         >
-          {{ language | translate }}
+          <img
+            class="country-flag"
+            src="assets/flags/{{ language }}.svg"
+            alt=""
+          />
         </mat-option>
       </mat-select>
     </mat-form-field>
