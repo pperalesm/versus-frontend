@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,14 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(public translate: TranslateService) {}
+  public selectedLanguage: string;
+
+  constructor(public translate: TranslateService) {
+    this.selectedLanguage = translate.getDefaultLang();
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.selectedLanguage = event.lang;
+    });
+  }
 
   ngOnInit(): void {}
 
