@@ -11,6 +11,11 @@
           >
             {{ 'FieldRequired' | translate }}
           </mat-error>
+          <mat-error
+            *ngIf="signupForm.hasError('email', 'emailFormControl')"
+          >
+            {{ 'EmailInvalid' | translate }}
+          </mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -21,6 +26,11 @@
             *ngIf="signupForm.hasError('required', 'usernameFormControl')"
           >
             {{ 'FieldRequired' | translate }}
+          </mat-error>
+          <mat-error
+            *ngIf="signupForm.hasError('pattern', 'usernameFormControl')"
+          >
+            {{ 'UsernameInvalid' | translate }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -37,14 +47,29 @@
           >
             {{ 'FieldRequired' | translate }}
           </mat-error>
+          <mat-error
+            *ngIf="signupForm.hasError('minlength', 'passwordFormControl')"
+          >
+            {{ 'PasswordLengthInvalid' | translate }}
+          </mat-error>
         </mat-form-field>
       </div>
-      <div>
+      <div class="small-container">
+      <small>
+        {{ 'PreTerms' | translate }}
         <a>
-          By signing up, you agree to our Terms . Learn how we collect, use and
-          share your data in our Data Policy and how we use cookies and similar
-          technology in our Cookies Policy .
+          {{ 'Terms' | translate }}
         </a>
+        {{ 'PreDataPolicy' | translate }}
+        <a>
+          {{ 'DataPolicy' | translate }}
+        </a>
+        {{ 'PreCookiesPolicy' | translate }}
+        <a>
+          {{ 'CookiesPolicy' | translate }}
+        </a>
+        {{ '.' | translate }}
+      </small>
       </div>
       <div>
         <button

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ConstantsService } from 'src/app/shared/services/constants.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({
-    usernameFormControl: new FormControl('', [Validators.required]),
+    usernameFormControl: new FormControl('', [
+      Validators.required,
+      Validators.pattern(this.constants.USERNAME_VALIDATION),
+    ]),
     emailFormControl: new FormControl('', [
       Validators.required,
       Validators.email,
@@ -19,7 +23,7 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
-  constructor() {}
+  constructor(private constants: ConstantsService) {}
 
   ngOnInit(): void {}
 
