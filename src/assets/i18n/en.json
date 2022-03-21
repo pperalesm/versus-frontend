@@ -6,5 +6,7 @@
   "UsernameOrEmail": "Username or email",
   "Password": "Password",
   "FieldRequired": "This field is required",
-  "ForgotPassword": "Forgot your password?"
+  "ForgotPassword": "Forgot your password?",
+  "Email": "Email",
+  "Username": "Username"
 }
