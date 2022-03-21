@@ -1,5 +1,5 @@
-@use "sass:color";
-@import "themes.scss";
+@use 'sass:color';
+@import 'themes.scss';
 
 html,
 body {
@@ -7,13 +7,21 @@ body {
   padding: 0;
 }
 
-button:active {
+button:active:enabled {
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
 }
 
 .overlay {
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(25, 25, 25);
+}
+
+.border-primary {
+  border: 1px solid $default-primary;
+}
+
+.border-accent {
+  border: 1px solid $default-accent;
 }
 
 .mat-raised-button.mat-primary {

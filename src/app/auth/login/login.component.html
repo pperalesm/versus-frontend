@@ -1,0 +1,42 @@
+<img src="favicon.ico" />
+<mat-card class="overlay border-primary" align="center">
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>{{ 'UsernameOrEmail' | translate }}</mat-label>
+          <input matInput type="text" formControlName="emailFormControl" />
+          <mat-error *ngIf="loginForm.hasError('required', 'emailFormControl')">
+            {{ 'FieldRequired' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'Password' | translate }}</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="passwordFormControl"
+          />
+          <mat-error
+            *ngIf="loginForm.hasError('required', 'passwordFormControl')"
+          >
+            {{ 'FieldRequired' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          type="submit"
+          [disabled]="!loginForm.valid"
+          mat-raised-button
+          color="accent"
+        >
+          {{ 'LogIn' | translate }}
+        </button>
+      </div>
+    </form>
+    <a routerLink="/">{{ 'ForgotPassword' | translate }}</a>
+  </mat-card-content>
+</mat-card>

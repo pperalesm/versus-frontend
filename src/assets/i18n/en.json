@@ -3,6 +3,8 @@
   "SignUp": "Sign Up",
   "Home": "Home",
   "Language": "Language",
-  "en": "English",
-  "es": "Español"
+  "UsernameOrEmail": "Username or email",
+  "Password": "Password",
+  "FieldRequired": "This field is required",
+  "ForgotPassword": "Forgot your password?"
 }
