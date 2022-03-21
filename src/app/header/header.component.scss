@@ -1,8 +1,8 @@
 @import './../../themes.scss';
 
 button {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
 }
 
 .header {
@@ -11,8 +11,8 @@ button {
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 15vw;
+  padding-right: 15vw;
   height: 40px;
   position: sticky;
   top: 0px;
@@ -25,13 +25,13 @@ button {
 }
 
 .logo {
-  margin-right: 40px;
+  margin-right: 2vw;
   cursor: pointer;
 }
 
 .mat-form-field {
   padding-top: 5px;
-  margin-left: 40px;
+  margin-left: 2vw;
   width: 40px;
 }
 
