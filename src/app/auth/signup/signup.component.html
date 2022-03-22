@@ -4,39 +4,37 @@
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
-          <mat-label>{{ 'Email' | translate }}</mat-label>
+          <mat-label>{{ "Email" | translate }}</mat-label>
           <input matInput type="text" formControlName="emailFormControl" />
           <mat-error
             *ngIf="signupForm.hasError('required', 'emailFormControl')"
           >
-            {{ 'FieldRequired' | translate }}
+            {{ "FieldRequired" | translate }}
           </mat-error>
-          <mat-error
-            *ngIf="signupForm.hasError('email', 'emailFormControl')"
-          >
-            {{ 'EmailInvalid' | translate }}
+          <mat-error *ngIf="signupForm.hasError('email', 'emailFormControl')">
+            {{ "EmailInvalid" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" color="primary">
-          <mat-label>{{ 'Username' | translate }}</mat-label>
+          <mat-label>{{ "Username" | translate }}</mat-label>
           <input matInput type="text" formControlName="usernameFormControl" />
           <mat-error
             *ngIf="signupForm.hasError('required', 'usernameFormControl')"
           >
-            {{ 'FieldRequired' | translate }}
+            {{ "FieldRequired" | translate }}
           </mat-error>
           <mat-error
             *ngIf="signupForm.hasError('pattern', 'usernameFormControl')"
           >
-            {{ 'UsernameInvalid' | translate }}
+            {{ "UsernameInvalid" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
-          <mat-label>{{ 'Password' | translate }}</mat-label>
+          <mat-label>{{ "Password" | translate }}</mat-label>
           <input
             matInput
             type="password"
@@ -45,31 +43,31 @@
           <mat-error
             *ngIf="signupForm.hasError('required', 'passwordFormControl')"
           >
-            {{ 'FieldRequired' | translate }}
+            {{ "FieldRequired" | translate }}
           </mat-error>
           <mat-error
             *ngIf="signupForm.hasError('minlength', 'passwordFormControl')"
           >
-            {{ 'PasswordLengthInvalid' | translate }}
+            {{ "PasswordLengthInvalid" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
       <div class="small-container">
-      <small>
-        {{ 'PreTerms' | translate }}
-        <a>
-          {{ 'Terms' | translate }}
-        </a>
-        {{ 'PreDataPolicy' | translate }}
-        <a>
-          {{ 'DataPolicy' | translate }}
-        </a>
-        {{ 'PreCookiesPolicy' | translate }}
-        <a>
-          {{ 'CookiesPolicy' | translate }}
-        </a>
-        {{ '.' | translate }}
-      </small>
+        <small>
+          {{ "PreTerms" | translate }}
+          <a (click)="onTermsClicked()">
+            {{ "Terms" | translate }}
+          </a>
+          {{ "PreDataPolicy" | translate }}
+          <a>
+            {{ "DataPolicy" | translate }}
+          </a>
+          {{ "PreCookiesPolicy" | translate }}
+          <a>
+            {{ "CookiesPolicy" | translate }}
+          </a>
+          {{ "." | translate }}
+        </small>
       </div>
       <div>
         <button
@@ -78,7 +76,7 @@
           mat-raised-button
           color="accent"
         >
-          {{ 'SignUp' | translate }}
+          {{ "SignUp" | translate }}
         </button>
       </div>
     </form>

@@ -18,5 +18,6 @@
   ".": ".",
   "EmailInvalid": "Enter a valid email address",
   "UsernameInvalid": "Enter only letters and numbers",
-  "PasswordLengthInvalid": "Enter at least 8 characters"
+  "PasswordLengthInvalid": "Enter at least 8 characters",
+  "Close": "Close"
 }

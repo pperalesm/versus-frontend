@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { TermsComponent } from 'src/app/shared/components/terms/terms.component';
 import { ConstantsService } from 'src/app/shared/services/constants.service';
 
 @Component({
@@ -23,9 +25,13 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
-  constructor(private constants: ConstantsService) {}
+  constructor(private constants: ConstantsService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   onSubmit() {}
+
+  onTermsClicked() {
+    this.dialog.open(TermsComponent);
+  }
 }

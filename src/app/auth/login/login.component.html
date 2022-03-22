@@ -4,16 +4,16 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
-          <mat-label>{{ 'UsernameOrEmail' | translate }}</mat-label>
+          <mat-label>{{ "UsernameOrEmail" | translate }}</mat-label>
           <input matInput type="text" formControlName="emailFormControl" />
           <mat-error *ngIf="loginForm.hasError('required', 'emailFormControl')">
-            {{ 'FieldRequired' | translate }}
+            {{ "FieldRequired" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
-          <mat-label>{{ 'Password' | translate }}</mat-label>
+          <mat-label>{{ "Password" | translate }}</mat-label>
           <input
             matInput
             type="password"
@@ -22,7 +22,7 @@
           <mat-error
             *ngIf="loginForm.hasError('required', 'passwordFormControl')"
           >
-            {{ 'FieldRequired' | translate }}
+            {{ "FieldRequired" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -33,10 +33,10 @@
           mat-raised-button
           color="accent"
         >
-          {{ 'LogIn' | translate }}
+          {{ "LogIn" | translate }}
         </button>
       </div>
     </form>
-    <a routerLink="/">{{ 'ForgotPassword' | translate }}</a>
+    <a routerLink="/">{{ "ForgotPassword" | translate }}</a>
   </mat-card-content>
 </mat-card>
