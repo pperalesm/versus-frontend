@@ -10,16 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { TermsComponent } from './shared/components/terms/terms.component';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    TermsComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +27,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     }),
     MatButtonModule,
     MatSelectModule,
-    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

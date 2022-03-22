@@ -1,10 +1,9 @@
 .mat-card {
-  margin-top: 75px;
+  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 450px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  width: min-content;
+  padding: 50px 75px;
   border-radius: 25px;
 }
 
@@ -28,10 +27,19 @@ a {
   width: 350px;
 }
 
-img {
+.logo {
   display: block;
   height: 100px;
-  margin-top: 75px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mat-spinner {
+  margin: auto;
+}
+
+.h1h2-container {
+  width: 500px;
 }

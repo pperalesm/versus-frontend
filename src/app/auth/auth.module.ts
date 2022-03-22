@@ -8,9 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SignupComponent } from './signup/signup.component';
+import { ActivateComponent } from './activate/activate.component';
+import { SharedModule } from '../shared/shared.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent],
+  declarations: [LoginComponent, SignupComponent, ActivateComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -19,6 +22,8 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
+    SharedModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class AuthModule {}

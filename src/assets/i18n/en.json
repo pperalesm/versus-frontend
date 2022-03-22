@@ -19,5 +19,8 @@
   "EmailInvalid": "Enter a valid email address",
   "UsernameInvalid": "Enter only letters and numbers",
   "PasswordLengthInvalid": "Enter at least 8 characters",
-  "Close": "Close"
+  "Close": "Close",
+  "AccountActivated": "Your account has been successfully activated!",
+  "AccountCreated": "Your account has been successfully created!",
+  "ActivationLinkSent": "An activation link has been sent to your email address."
 }
