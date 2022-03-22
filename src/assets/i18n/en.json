@@ -6,5 +6,18 @@
   "UsernameOrEmail": "Username or email",
   "Password": "Password",
   "FieldRequired": "This field is required",
-  "ForgotPassword": "Forgot your password?"
+  "ForgotPassword": "Forgot your password?",
+  "Email": "Email",
+  "Username": "Username",
+  "PreTerms": "By signing up, you agree to our ",
+  "Terms": "Terms",
+  "PreDataPolicy": ". Learn how we collect, use and share your data in our ",
+  "DataPolicy": "Data Policy",
+  "PreCookiesPolicy": " and how we use cookies and similar technology in our ",
+  "CookiesPolicy": "Cookies Policy",
+  ".": ".",
+  "EmailInvalid": "Enter a valid email address",
+  "UsernameInvalid": "Enter only letters and numbers",
+  "PasswordLengthInvalid": "Enter at least 8 characters",
+  "Close": "Close"
 }

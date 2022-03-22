@@ -2,7 +2,7 @@
   <div class="container">
     <img class="logo" src="favicon.ico" routerLink="/" />
     <button mat-raised-button color="primary" routerLink="/">
-      {{ 'Home' | translate }}
+      {{ "Home" | translate }}
     </button>
     <button mat-raised-button color="primary">Whatever</button>
     <button mat-raised-button color="primary">Example</button>
@@ -10,10 +10,10 @@
   </div>
   <div class="container">
     <button mat-raised-button color="accent" routerLink="auth/login">
-      {{ 'LogIn' | translate }}
+      {{ "LogIn" | translate }}
     </button>
-    <button mat-raised-button color="accent">
-      {{ 'SignUp' | translate }}
+    <button mat-raised-button color="accent" routerLink="auth/signup">
+      {{ "SignUp" | translate }}
     </button>
     <mat-form-field color="primary">
       <mat-select

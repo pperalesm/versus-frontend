@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 @include mat.core();
 
 $silver-palette: (
@@ -54,12 +54,12 @@ $gold-palette: (
 $my-primary: mat.define-palette($silver-palette, 500);
 $my-accent: mat.define-palette($gold-palette, 700);
 
-$default-primary: mat.get-color-from-palette($my-primary, 'default');
-$default-accent: mat.get-color-from-palette($my-accent, 'default');
-$darker-primary: mat.get-color-from-palette($my-primary, 'darker');
-$darker-accent: mat.get-color-from-palette($my-accent, 'darker');
-$lighter-primary: mat.get-color-from-palette($my-primary, 'lighter');
-$lighter-accent: mat.get-color-from-palette($my-accent, 'lighter');
+$default-primary: mat.get-color-from-palette($my-primary, "default");
+$default-accent: mat.get-color-from-palette($my-accent, "default");
+$darker-primary: mat.get-color-from-palette($my-primary, "darker");
+$darker-accent: mat.get-color-from-palette($my-accent, "darker");
+$lighter-primary: mat.get-color-from-palette($my-primary, "lighter");
+$lighter-accent: mat.get-color-from-palette($my-accent, "lighter");
 
 $my-theme: mat.define-dark-theme(
   (
