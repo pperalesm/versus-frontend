@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { SignupComponent } from './signup/signup.component';
 import { ActivateComponent } from './activate/activate.component';
 import { SharedModule } from '../shared/shared.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, ActivateComponent],
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     MatButtonModule,
     MatInputModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class AuthModule {}

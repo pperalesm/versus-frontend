@@ -25,11 +25,16 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
+  sent: boolean = false;
+  created: boolean = false;
+
   constructor(private constants: ConstantsService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
-  onSubmit() {}
+  onSubmit() {
+    this.sent = true;
+  }
 
   onTermsClicked() {
     this.dialog.open(TermsComponent);

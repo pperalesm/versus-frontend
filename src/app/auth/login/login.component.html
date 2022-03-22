@@ -1,6 +1,7 @@
 <img class="logo" src="favicon.ico" />
 <mat-card class="overlay border-primary" align="center">
-  <mat-card-content>
+  <mat-spinner *ngIf="sent" color="primary"></mat-spinner>
+  <mat-card-content *ngIf="!sent">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
@@ -23,6 +24,11 @@
             *ngIf="loginForm.hasError('required', 'passwordFormControl')"
           >
             {{ "FieldRequired" | translate }}
+          </mat-error>
+          <mat-error
+            *ngIf="loginForm.hasError('minlength', 'passwordFormControl')"
+          >
+            {{ "PasswordLengthInvalid" | translate }}
           </mat-error>
         </mat-form-field>
       </div>
