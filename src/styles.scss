@@ -36,7 +36,7 @@ button:active:enabled {
   text-shadow: 1px 1px 0 #000;
 }
 
-.mat-raised-button.mat-accent {
+.mat-raised-button.mat-accent:enabled {
   border: 1px solid $default-accent;
   background: -webkit-gradient(
     linear,
@@ -45,5 +45,17 @@ button:active:enabled {
     from(color.adjust($default-accent, $lightness: -40%)),
     to($default-accent)
   );
+  text-shadow: 1px 1px 0 #000;
+}
+
+.mat-raised-button.mat-primary:disabled {
+  border: 1px solid color.adjust($default-primary, $lightness: -40%);
+  background: color.adjust($default-primary, $lightness: -40%);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.mat-raised-button.mat-accent:disabled {
+  border: 1px solid color.adjust($default-accent, $lightness: -40%);
+  background: color.adjust($default-accent, $lightness: -40%);
   text-shadow: 1px 1px 0 #000;
 }
