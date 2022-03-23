@@ -1,11 +1,11 @@
 <img class="logo" src="favicon.ico" />
 <mat-card class="overlay border-primary" align="center">
-  <div *ngIf="created" class="h1h2-container">
+  <div *ngIf="linkSent" class="h1h2-container">
     <h1>{{ "AccountCreated" | translate }}</h1>
     <h2>{{ "ActivationLinkSent" | translate }}</h2>
   </div>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
-  <mat-card-content *ngIf="!loading && !created">
+  <mat-card-content *ngIf="!loading && !linkSent">
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">

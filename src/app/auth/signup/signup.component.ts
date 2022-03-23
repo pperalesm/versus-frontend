@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
   });
 
   loading: boolean = false;
-  created: boolean = false;
+  linkSent: boolean = false;
 
   constructor(private constants: ConstantsService, private dialog: MatDialog) {}
 

@@ -22,5 +22,7 @@
   "Close": "Close",
   "AccountActivated": "Your account has been successfully activated!",
   "AccountCreated": "Your account has been successfully created!",
-  "ActivationLinkSent": "An activation link has been sent to your email address."
+  "ActivationLinkSent": "An activation link has been sent to your email address.",
+  "ResetPasswordLinkSent": "A link to reset your password has been sent to your email address.",
+  "GetNewPassword": "Get me a new password"
 }
