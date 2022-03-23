@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
-      Validators.minLength(8),
+      Validators.minLength(this.constants.MIN_PASSWORD_LENGTH),
     ]),
   });
 
