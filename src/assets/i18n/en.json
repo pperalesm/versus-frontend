@@ -5,6 +5,7 @@
   "Language": "Language",
   "UsernameOrEmail": "Username or email",
   "Password": "Password",
+  "NewPassword": "New password",
   "FieldRequired": "This field is required",
   "ForgotPassword": "Forgot your password?",
   "Email": "Email",
@@ -22,5 +23,9 @@
   "Close": "Close",
   "AccountActivated": "Your account has been successfully activated!",
   "AccountCreated": "Your account has been successfully created!",
-  "ActivationLinkSent": "An activation link has been sent to your email address."
+  "PasswordChanged": "Your password has been successfully changed!",
+  "ChangePassword": "Change my password",
+  "ActivationLinkSent": "An activation link has been sent to your email address.",
+  "ResetPasswordLinkSent": "A link to reset your password has been sent to your email address.",
+  "GetNewPassword": "Get me a new password"
 }

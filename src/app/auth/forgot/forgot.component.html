@@ -1,8 +1,11 @@
 <img class="logo" src="favicon.ico" />
 <mat-card class="overlay border-primary" align="center">
+  <h1 *ngIf="linkSent" class="h1-container">
+    {{ "ResetPasswordLinkSent" | translate }}
+  </h1>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
-  <mat-card-content *ngIf="!loading">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-card-content *ngIf="!loading && !linkSent">
+    <form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
           <mat-label>{{ "UsernameOrEmail" | translate }}</mat-label>
@@ -10,26 +13,15 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field appearance="outline">
-          <mat-label>{{ "Password" | translate }}</mat-label>
-          <input
-            matInput
-            type="password"
-            formControlName="passwordFormControl"
-          />
-        </mat-form-field>
-      </div>
-      <div>
         <button
           type="submit"
-          [disabled]="!loginForm.valid"
+          [disabled]="!forgotForm.valid"
           mat-raised-button
           color="accent"
         >
-          {{ "LogIn" | translate }}
+          {{ "GetNewPassword" | translate }}
         </button>
       </div>
     </form>
-    <a routerLink="/auth/forgot">{{ "ForgotPassword" | translate }}</a>
   </mat-card-content>
 </mat-card>

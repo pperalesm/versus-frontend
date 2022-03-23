@@ -21,19 +21,19 @@ export class SignupComponent implements OnInit {
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
-      Validators.minLength(8),
+      Validators.minLength(this.constants.MIN_PASSWORD_LENGTH),
     ]),
   });
 
-  sent: boolean = false;
-  created: boolean = false;
+  loading: boolean = false;
+  linkSent: boolean = false;
 
   constructor(private constants: ConstantsService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    this.sent = true;
+    this.loading = true;
   }
 
   onTermsClicked() {
