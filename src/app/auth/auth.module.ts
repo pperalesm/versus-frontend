@@ -11,9 +11,17 @@ import { SignupComponent } from './signup/signup.component';
 import { ActivateComponent } from './activate/activate.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ForgotComponent } from './forgot/forgot.component';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, ActivateComponent],
+  declarations: [
+    LoginComponent,
+    SignupComponent,
+    ActivateComponent,
+    ForgotComponent,
+    ResetComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
