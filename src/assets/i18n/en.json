@@ -16,7 +16,6 @@
   "DataPolicy": "Data Policy",
   "PreCookiesPolicy": " and how we use cookies and similar technology in our ",
   "CookiesPolicy": "Cookies Policy",
-  ".": ".",
   "EmailInvalid": "Enter a valid email address",
   "UsernameInvalid": "Enter only letters and numbers",
   "PasswordLengthInvalid": "Enter at least 8 characters",
@@ -27,5 +26,7 @@
   "ChangePassword": "Change my password",
   "ActivationLinkSent": "An activation link has been sent to your email address.",
   "ResetPasswordLinkSent": "A link to reset your password has been sent to your email address.",
-  "GetNewPassword": "Get me a new password"
+  "GetNewPassword": "Get me a new password",
+  "Copyright": "Ⓒ 2022 VERSUS All rights reserved",
+  "DevelopedBy": "Developed by"
 }

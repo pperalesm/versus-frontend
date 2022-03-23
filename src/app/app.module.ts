@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -27,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     }),
     MatButtonModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
