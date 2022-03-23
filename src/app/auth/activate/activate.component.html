@@ -1,6 +1,6 @@
 <mat-card class="overlay border-primary" align="center">
-  <div *ngIf="activated" class="h1-container">
+  <div *ngIf="!loading" class="h1-container">
     <h1>{{ "AccountActivated" | translate }}</h1>
   </div>
-  <mat-spinner *ngIf="!activated" color="primary"></mat-spinner>
+  <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
 </mat-card>

@@ -1,7 +1,7 @@
 <img class="logo" src="favicon.ico" />
 <mat-card class="overlay border-primary" align="center">
-  <mat-spinner *ngIf="sent" color="primary"></mat-spinner>
-  <mat-card-content *ngIf="!sent">
+  <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+  <mat-card-content *ngIf="!loading">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">

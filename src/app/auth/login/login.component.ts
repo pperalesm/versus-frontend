@@ -12,13 +12,13 @@ export class LoginComponent implements OnInit {
     passwordFormControl: new FormControl(''),
   });
 
-  sent: boolean = false;
+  loading: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    this.sent = true;
+    this.loading = true;
   }
 }

@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
-  sent: boolean = false;
+  loading: boolean = false;
   created: boolean = false;
 
   constructor(private constants: ConstantsService, private dialog: MatDialog) {}
@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.sent = true;
+    this.loading = true;
   }
 
   onTermsClicked() {

@@ -4,8 +4,8 @@
     <h1>{{ "AccountCreated" | translate }}</h1>
     <h2>{{ "ActivationLinkSent" | translate }}</h2>
   </div>
-  <mat-spinner *ngIf="sent && !created" color="primary"></mat-spinner>
-  <mat-card-content *ngIf="!sent && !created">
+  <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+  <mat-card-content *ngIf="!loading && !created">
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
