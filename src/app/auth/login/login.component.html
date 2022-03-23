@@ -7,9 +7,6 @@
         <mat-form-field appearance="outline" color="primary">
           <mat-label>{{ "UsernameOrEmail" | translate }}</mat-label>
           <input matInput type="text" formControlName="emailFormControl" />
-          <mat-error *ngIf="loginForm.hasError('required', 'emailFormControl')">
-            {{ "FieldRequired" | translate }}
-          </mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -20,16 +17,6 @@
             type="password"
             formControlName="passwordFormControl"
           />
-          <mat-error
-            *ngIf="loginForm.hasError('required', 'passwordFormControl')"
-          >
-            {{ "FieldRequired" | translate }}
-          </mat-error>
-          <mat-error
-            *ngIf="loginForm.hasError('minlength', 'passwordFormControl')"
-          >
-            {{ "PasswordLengthInvalid" | translate }}
-          </mat-error>
         </mat-form-field>
       </div>
       <div>
