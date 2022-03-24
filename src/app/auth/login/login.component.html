@@ -1,5 +1,4 @@
-<img class="logo" src="favicon.ico" />
-<mat-card class="overlay border-primary" align="center">
+<app-wrapper>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
   <mat-card-content *ngIf="!loading">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -32,4 +31,4 @@
     </form>
     <a routerLink="/auth/forgot">{{ "ForgotPassword" | translate }}</a>
   </mat-card-content>
-</mat-card>
+</app-wrapper>

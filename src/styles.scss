@@ -59,3 +59,9 @@ button:active:enabled {
   background: color.adjust($default-accent, $lightness: -40%);
   text-shadow: 1px 1px 0 #000;
 }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(0, 191, 255);
+}

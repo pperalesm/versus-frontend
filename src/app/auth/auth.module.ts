@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ForgotComponent } from './forgot/forgot.component';
 import { ResetComponent } from './reset/reset.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ResetComponent } from './reset/reset.component';
     ActivateComponent,
     ForgotComponent,
     ResetComponent,
+    WrapperComponent,
   ],
   imports: [
     CommonModule,
