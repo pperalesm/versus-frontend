@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  ACCOUNTS_URL: 'localhost:3000/',
+  ACCOUNTS_URL: 'dev.api.accounts.versus.gg/',
 };
