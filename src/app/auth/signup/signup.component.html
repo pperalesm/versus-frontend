@@ -30,6 +30,11 @@
             {{ "FieldRequired" | translate }}
           </mat-error>
           <mat-error
+            *ngIf="signupForm.hasError('minlength', 'usernameFormControl')"
+          >
+            {{ "UsernameLengthInvalid" | translate }}
+          </mat-error>
+          <mat-error
             *ngIf="signupForm.hasError('pattern', 'usernameFormControl')"
           >
             {{ "UsernameInvalid" | translate }}

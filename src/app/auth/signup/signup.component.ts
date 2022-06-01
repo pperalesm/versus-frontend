@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { TermsComponent } from 'src/app/shared/components/terms/terms.component';
-import { ConstantsService } from 'src/app/shared/services/constants.service';
+import { Constants } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +13,8 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({
     usernameFormControl: new FormControl('', [
       Validators.required,
-      Validators.pattern(this.constants.USERNAME_VALIDATION),
+      Validators.minLength(Constants.MIN_USERNAME_LENGTH),
+      Validators.pattern(Constants.USERNAME_PATTERN),
     ]),
     emailFormControl: new FormControl('', [
       Validators.required,
@@ -21,14 +22,14 @@ export class SignupComponent implements OnInit {
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
-      Validators.minLength(this.constants.MIN_PASSWORD_LENGTH),
+      Validators.minLength(Constants.MIN_PASSWORD_LENGTH),
     ]),
   });
 
   loading: boolean = false;
   linkSent: boolean = false;
 
-  constructor(private constants: ConstantsService, private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 

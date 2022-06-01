@@ -19,6 +19,7 @@
   "EmailInvalid": "Enter a valid email address",
   "UsernameInvalid": "Enter only letters and numbers",
   "PasswordLengthInvalid": "Enter at least 8 characters",
+  "UsernameLengthInvalid": "Enter at least 4 characters",
   "Close": "Close",
   "AccountActivated": "Your account has been successfully activated!",
   "AccountCreated": "Your account has been successfully created!",
