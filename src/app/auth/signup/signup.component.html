@@ -5,6 +5,11 @@
   </div>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
   <mat-card-content *ngIf="!loading && !linkSent">
+    <mat-error *ngIf="error">
+      {{ error | translate }}
+      <br />
+      <br />
+    </mat-error>
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">

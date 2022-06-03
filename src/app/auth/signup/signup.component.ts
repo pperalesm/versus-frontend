@@ -13,14 +13,14 @@ import { AccountsService } from 'src/app/shared/services/accounts.service';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({
+    emailFormControl: new FormControl('', [
+      Validators.required,
+      Validators.pattern(Constants.EMAIL_PATTERN),
+    ]),
     usernameFormControl: new FormControl('', [
       Validators.required,
       Validators.minLength(Constants.MIN_USERNAME_LENGTH),
       Validators.pattern(Constants.USERNAME_PATTERN),
-    ]),
-    emailFormControl: new FormControl('', [
-      Validators.required,
-      Validators.pattern(Constants.EMAIL_PATTERN),
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
@@ -30,6 +30,7 @@ export class SignupComponent implements OnInit {
 
   loading: boolean = false;
   linkSent: boolean = false;
+  error: string = '';
   querySubscription!: Subscription;
 
   constructor(
@@ -49,11 +50,15 @@ export class SignupComponent implements OnInit {
       )
       .subscribe({
         next: ({ data }) => {
-          console.log(data);
-          this.loading = false;
           this.linkSent = true;
+          this.loading = false;
         },
-        error: () => {
+        error: (err) => {
+          if (err.message == 'Conflict') {
+            this.error = Constants.EMAIL_CONFLICT_ERROR;
+          } else {
+            this.error = Constants.DEFAULT_ERROR;
+          }
           this.loading = false;
         },
       });
