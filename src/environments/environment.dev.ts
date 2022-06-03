@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  ACCOUNTS_URL: 'dev.api.accounts.versus.gg/',
+  ACCOUNTS_URL: 'http://dev.api.accounts.versus.gg',
 };

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { TermsComponent } from 'src/app/shared/components/terms/terms.component';
 import { Constants } from 'src/app/shared/constants';
+import { AccountsService } from 'src/app/shared/services/accounts.service';
 
 @Component({
   selector: 'app-signup',
@@ -28,16 +30,29 @@ export class SignupComponent implements OnInit {
 
   loading: boolean = false;
   linkSent: boolean = false;
+  querySubscription!: Subscription;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private accountsService: AccountsService,
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
     this.loading = true;
+    this.querySubscription = this.accountsService
+      .createAccount()
+      .subscribe(({ data }) => {
+        console.log(data);
+      });
   }
 
   onTermsClicked() {
     this.dialog.open(TermsComponent);
+  }
+
+  ngOnDestroy() {
+    this.querySubscription?.unsubscribe();
   }
 }

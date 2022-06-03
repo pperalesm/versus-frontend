@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

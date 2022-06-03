@@ -4,5 +4,6 @@
   "Home": "Inicio",
   "Language": "Idioma",
   "en": "English",
-  "es": "Español"
+  "es": "Español",
+  "FieldRequired": "Es obligatorio rellenar este campo"
 }
