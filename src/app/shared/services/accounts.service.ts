@@ -2,12 +2,16 @@ import { Injectable } from '@angular/core';
 import { Apollo, ApolloBase, gql } from 'apollo-angular';
 
 const CREATE_ACCOUNT = gql`
-  mutation {
+  mutation CreateAccount(
+    $email: String!
+    $username: String!
+    $password: String!
+  ) {
     createAccount(
       createAccountDto: {
-        email: "bla@sfbla.blaaaa"
-        username: "blablabasflaaaa"
-        password: "blaasfblabla"
+        email: $email
+        username: $username
+        password: $password
       }
     ) {
       email
@@ -30,7 +34,14 @@ export class AccountsService {
     this.apollo = apolloProvider.use('accountsApi');
   }
 
-  createAccount() {
-    return this.apollo.mutate({ mutation: CREATE_ACCOUNT });
+  createAccount(email: string, username: string, password: string) {
+    return this.apollo.mutate({
+      mutation: CREATE_ACCOUNT,
+      variables: {
+        email: email,
+        username: username,
+        password: password,
+      },
+    });
   }
 }

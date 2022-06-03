@@ -15,7 +15,7 @@
           >
             {{ "FieldRequired" | translate }}
           </mat-error>
-          <mat-error *ngIf="signupForm.hasError('email', 'emailFormControl')">
+          <mat-error *ngIf="signupForm.hasError('pattern', 'emailFormControl')">
             {{ "EmailInvalid" | translate }}
           </mat-error>
         </mat-form-field>

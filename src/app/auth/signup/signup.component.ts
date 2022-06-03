@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
     ]),
     emailFormControl: new FormControl('', [
       Validators.required,
-      Validators.email,
+      Validators.pattern(Constants.EMAIL_PATTERN),
     ]),
     passwordFormControl: new FormControl('', [
       Validators.required,
@@ -42,9 +42,20 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     this.querySubscription = this.accountsService
-      .createAccount()
-      .subscribe(({ data }) => {
-        console.log(data);
+      .createAccount(
+        this.signupForm.get('emailFormControl')?.value,
+        this.signupForm.get('usernameFormControl')?.value,
+        this.signupForm.get('passwordFormControl')?.value,
+      )
+      .subscribe({
+        next: ({ data }) => {
+          console.log(data);
+          this.loading = false;
+          this.linkSent = true;
+        },
+        error: () => {
+          this.loading = false;
+        },
       });
   }
 
