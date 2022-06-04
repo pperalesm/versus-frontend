@@ -1,19 +1,17 @@
 <div class="footer overlay">
   <div class="container">
     <small
-      >{{ "Copyright" | translate }}{{ separator }}
-      <a (click)="onTermsClicked()">{{ "Terms" | translate }}</a
-      >{{ separator }} <a>{{ "DataPolicy" | translate }}</a
-      >{{ separator }}
+      >{{ "Copyright" | translate }} ·
+      <a (click)="onTermsClicked()">{{ "Terms" | translate }}</a> ·
+      <a>{{ "DataPolicy" | translate }}</a> ·
       <a>{{ "CookiesPolicy" | translate }}</a>
     </small>
   </div>
   <div class="container">
     <small>
-      {{ version }}
-      {{ separator }}
+      {{ VERSION }} ·
       {{ "DevelopedBy" | translate }}
-      <a href="{{ pabloUrl }}" target="_blank">{{ pablo }}</a>
+      <a href="{{ DEVELOPER_URL }}" target="_blank">{{ DEVELOPER }}</a>
     </small>
   </div>
 </div>
