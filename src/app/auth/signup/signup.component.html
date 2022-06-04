@@ -29,6 +29,13 @@
         <mat-form-field appearance="outline" color="primary">
           <mat-label>{{ "Username" | translate }}</mat-label>
           <input matInput type="text" formControlName="usernameFormControl" />
+          <mat-progress-spinner
+            matSuffix
+            [mode]="'indeterminate'"
+            [diameter]="20"
+            *ngIf="signupForm.pending"
+          >
+          </mat-progress-spinner>
           <mat-error
             *ngIf="signupForm.hasError('required', 'usernameFormControl')"
           >
@@ -43,6 +50,11 @@
             *ngIf="signupForm.hasError('pattern', 'usernameFormControl')"
           >
             {{ "UsernameInvalid" | translate }}
+          </mat-error>
+          <mat-error
+            *ngIf="signupForm.hasError('checkUsername', 'usernameFormControl')"
+          >
+            {{ "UsernameTaken" | translate }}
           </mat-error>
         </mat-form-field>
       </div>

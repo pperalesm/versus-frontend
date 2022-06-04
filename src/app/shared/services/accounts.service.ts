@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  ValidationErrors,
+} from '@angular/forms';
 import { Apollo, ApolloBase, gql } from 'apollo-angular';
+import { catchError, map, Observable, of } from 'rxjs';
+import { Account } from '../models/account.model';
 
 const CREATE_ACCOUNT = gql`
   mutation CreateAccount(
@@ -20,7 +27,14 @@ const CREATE_ACCOUNT = gql`
       role
       active
       createdAt
+      updatedAt
     }
+  }
+`;
+
+const CHECK_USERNAME = gql`
+  query CheckUsername($username: String!) {
+    checkUsername(username: $username)
   }
 `;
 
@@ -35,7 +49,7 @@ export class AccountsService {
   }
 
   createAccount(email: string, username: string, password: string) {
-    return this.apollo.mutate({
+    return this.apollo.mutate<{ createAccount: Account }>({
       mutation: CREATE_ACCOUNT,
       variables: {
         email: email,
@@ -43,5 +57,23 @@ export class AccountsService {
         password: password,
       },
     });
+  }
+
+  checkUsername(username: string) {
+    return this.apollo.query<{ checkUsername: boolean }>({
+      query: CHECK_USERNAME,
+      variables: { username: username },
+    });
+  }
+
+  checkUsernameValidator(): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
+      return this.checkUsername(control.value).pipe(
+        map(({ data }) =>
+          data.checkUsername ? { checkUsername: true } : null,
+        ),
+        catchError(() => of(null)),
+      );
+    };
   }
 }

@@ -17,11 +17,15 @@ export class SignupComponent implements OnInit {
       Validators.required,
       Validators.pattern(Constants.EMAIL_PATTERN),
     ]),
-    usernameFormControl: new FormControl('', [
-      Validators.required,
-      Validators.minLength(Constants.MIN_USERNAME_LENGTH),
-      Validators.pattern(Constants.USERNAME_PATTERN),
-    ]),
+    usernameFormControl: new FormControl(
+      '',
+      [
+        Validators.required,
+        Validators.minLength(Constants.MIN_USERNAME_LENGTH),
+        Validators.pattern(Constants.USERNAME_PATTERN),
+      ],
+      this.accountsService.checkUsernameValidator(),
+    ),
     passwordFormControl: new FormControl('', [
       Validators.required,
       Validators.minLength(Constants.MIN_PASSWORD_LENGTH),
@@ -49,12 +53,12 @@ export class SignupComponent implements OnInit {
         this.signupForm.get('passwordFormControl')?.value,
       )
       .subscribe({
-        next: ({ data }) => {
+        next: () => {
           this.linkSent = true;
           this.loading = false;
         },
         error: (err) => {
-          if (err.message == 'Conflict') {
+          if (err.message == Constants.CONFLICT) {
             this.error = Constants.EMAIL_CONFLICT_ERROR;
           } else {
             this.error = Constants.DEFAULT_ERROR;
