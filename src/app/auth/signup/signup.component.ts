@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Subscription } from 'rxjs';
 import { TermsComponent } from 'src/app/shared/components/terms/terms.component';
 import { Constants } from 'src/app/shared/constants';
 import { AccountsService } from 'src/app/shared/services/accounts.service';
@@ -35,7 +34,6 @@ export class SignupComponent implements OnInit {
   loading = false;
   linkSent = false;
   error = '';
-  querySubscription!: Subscription;
 
   constructor(
     private dialog: MatDialog,
@@ -46,7 +44,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.loading = true;
-    this.querySubscription = this.accountsService
+    this.accountsService
       .createAccount(
         this.signupForm.get('emailFormControl')?.value,
         this.signupForm.get('usernameFormControl')?.value,
@@ -70,9 +68,5 @@ export class SignupComponent implements OnInit {
 
   onTermsClicked() {
     this.dialog.open(TermsComponent);
-  }
-
-  ngOnDestroy() {
-    this.querySubscription?.unsubscribe();
   }
 }

@@ -4,25 +4,51 @@ import {
   APOLLO_NAMED_OPTIONS,
   NamedOptions,
 } from 'apollo-angular';
-import { InMemoryCache } from '@apollo/client/core';
+import { ApolloLink, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { environment } from 'src/environments/environment';
+import { setContext } from '@apollo/client/link/context';
+import { HttpClientModule } from '@angular/common/http';
+
+export function createApollo(httpLink: HttpLink): NamedOptions {
+  const basic = setContext(() => ({
+    headers: {
+      Accept: 'charset=utf-8',
+    },
+  }));
+
+  const auth = setContext(() => {
+    const token = localStorage.getItem('token');
+
+    if (token === null) {
+      return {};
+    } else {
+      return {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+    }
+  });
+
+  return {
+    accountsApi: {
+      link: ApolloLink.from([
+        basic,
+        auth,
+        httpLink.create({ uri: environment.ACCOUNTS_URL + '/graphql' }),
+      ]),
+      cache: new InMemoryCache(),
+    },
+  };
+}
 
 @NgModule({
-  exports: [ApolloModule],
+  exports: [HttpClientModule, ApolloModule],
   providers: [
     {
       provide: APOLLO_NAMED_OPTIONS,
-      useFactory(httpLink: HttpLink): NamedOptions {
-        return {
-          accountsApi: {
-            link: httpLink.create({
-              uri: environment.ACCOUNTS_URL + '/graphql',
-            }),
-            cache: new InMemoryCache(),
-          },
-        };
-      },
+      useFactory: createApollo,
       deps: [HttpLink],
     },
   ],

@@ -9,7 +9,10 @@ export const Constants = {
   MIN_USERNAME_LENGTH: 4,
   DEFAULT_ERROR: 'DefaultError',
   CONFLICT: 'Conflict',
-  EMAIL_CONFLICT_ERROR: 'EmailConflictError',
   NOT_FOUND: 'Not Found',
+  BAD_REQUEST: 'Bad Request',
+  UNAUTHORIZED: 'Unauthorized',
+  EMAIL_CONFLICT_ERROR: 'EmailConflictError',
   ACTIVATION_NOT_FOUND_ERROR: 'ActivationNotFoundError',
+  LOGIN_CREDENTIALS_ERROR: 'LoginCredentialsError',
 };

@@ -31,7 +31,8 @@
   "GetNewPassword": "Get me a new password",
   "Copyright": "Ⓒ 2022 VERSUS All rights reserved",
   "DevelopedBy": "Developed by ",
+  "DefaultError": "An unexpected error occurred",
   "EmailConflictError": "This email address is already in use",
   "ActivationNotFoundError": "Activation link invalid",
-  "DefaultError": "An unexpected error occurred"
+  "LoginCredentialsError": "Incorrect user credentials"
 }

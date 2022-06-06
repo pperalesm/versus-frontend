@@ -5,7 +5,7 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 import { Apollo, ApolloBase, gql } from 'apollo-angular';
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { Account } from '../models/account.model';
 
 const CREATE_ACCOUNT = gql`
@@ -52,11 +52,29 @@ const ACTIVATE_ACCOUNT = gql`
   }
 `;
 
+const LOG_IN = gql`
+  query Login($user: String!, $password: String!) {
+    login(loginDto: { user: $user, password: $password }) {
+      token
+      account {
+        email
+        username
+        avatarPath
+        role
+        active
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+
 @Injectable({
   providedIn: 'root',
 })
 export class AccountsService {
   apollo: ApolloBase;
+  authUser?: Account;
 
   constructor(private apolloProvider: Apollo) {
     this.apollo = apolloProvider.use('accountsApi');
@@ -96,5 +114,19 @@ export class AccountsService {
       mutation: ACTIVATE_ACCOUNT,
       variables: { id: id, token: token },
     });
+  }
+
+  login(user: string, password: string) {
+    return this.apollo
+      .query<{ login: { token: string; account: Account } }>({
+        query: LOG_IN,
+        variables: { user: user, password: password },
+      })
+      .pipe(
+        tap(({ data }) => {
+          this.authUser = data.login.account;
+          localStorage.setItem('token', data.login.token);
+        }),
+      );
   }
 }

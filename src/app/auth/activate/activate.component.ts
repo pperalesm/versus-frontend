@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Constants } from 'src/app/shared/constants';
 import { AccountsService } from 'src/app/shared/services/accounts.service';
 
@@ -12,7 +11,6 @@ import { AccountsService } from 'src/app/shared/services/accounts.service';
 export class ActivateComponent implements OnInit {
   loading = true;
   error = '';
-  querySubscription!: Subscription;
 
   constructor(
     private accountsService: AccountsService,
@@ -23,21 +21,19 @@ export class ActivateComponent implements OnInit {
     const id = this.route.snapshot.queryParamMap.get('id');
     const token = this.route.snapshot.queryParamMap.get('token');
     if (id && token) {
-      this.querySubscription = this.accountsService
-        .activateAccount(id, token)
-        .subscribe({
-          next: () => {
-            this.loading = false;
-          },
-          error: (err) => {
-            if (err.message == Constants.NOT_FOUND) {
-              this.error = Constants.ACTIVATION_NOT_FOUND_ERROR;
-            } else {
-              this.error = Constants.DEFAULT_ERROR;
-            }
-            this.loading = false;
-          },
-        });
+      this.accountsService.activateAccount(id, token).subscribe({
+        next: () => {
+          this.loading = false;
+        },
+        error: (err) => {
+          if (err.message == Constants.NOT_FOUND) {
+            this.error = Constants.ACTIVATION_NOT_FOUND_ERROR;
+          } else {
+            this.error = Constants.DEFAULT_ERROR;
+          }
+          this.loading = false;
+        },
+      });
     }
   }
 }

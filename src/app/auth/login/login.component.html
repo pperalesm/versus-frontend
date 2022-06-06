@@ -1,11 +1,16 @@
 <app-wrapper>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
   <mat-card-content *ngIf="!loading">
+    <mat-error *ngIf="error">
+      {{ error | translate }}
+      <br />
+      <br />
+    </mat-error>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline" color="primary">
           <mat-label>{{ "UsernameOrEmail" | translate }}</mat-label>
-          <input matInput type="text" formControlName="emailFormControl" />
+          <input matInput type="text" formControlName="userFormControl" />
         </mat-form-field>
       </div>
       <div>
