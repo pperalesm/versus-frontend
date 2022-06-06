@@ -78,6 +78,10 @@ export class AccountsService {
 
   constructor(private apolloProvider: Apollo) {
     this.apollo = apolloProvider.use('accountsApi');
+    const authUserString = localStorage.getItem('authUser');
+    if (authUserString) {
+      this.authUser = JSON.parse(authUserString);
+    }
   }
 
   createAccount(email: string, username: string, password: string) {
@@ -126,7 +130,14 @@ export class AccountsService {
         tap(({ data }) => {
           this.authUser = data.login.account;
           localStorage.setItem('token', data.login.token);
+          localStorage.setItem('authUser', JSON.stringify(data.login.account));
         }),
       );
+  }
+
+  logout() {
+    this.authUser = undefined;
+    localStorage.removeItem('token');
+    localStorage.removeItem('authUser');
   }
 }

@@ -1,5 +1,6 @@
 {
   "LogIn": "Log In",
+  "LogOut": "Log Out",
   "SignUp": "Sign Up",
   "Home": "Home",
   "Language": "Language",
@@ -34,5 +35,5 @@
   "DefaultError": "An unexpected error occurred",
   "EmailConflictError": "This email address is already in use",
   "ActivationNotFoundError": "Activation link invalid",
-  "LoginCredentialsError": "Incorrect user credentials"
+  "LoginCredentialsError": "Incorrect account credentials"
 }
