@@ -32,5 +32,6 @@
   "Copyright": "Ⓒ 2022 VERSUS All rights reserved",
   "DevelopedBy": "Developed by ",
   "EmailConflictError": "This email address is already in use",
+  "ActivationNotFoundError": "Activation link invalid",
   "DefaultError": "An unexpected error occurred"
 }

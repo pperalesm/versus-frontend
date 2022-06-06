@@ -12,7 +12,7 @@ import { AccountsService } from 'src/app/shared/services/accounts.service';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  signupForm: FormGroup = new FormGroup({
+  signupForm = new FormGroup({
     emailFormControl: new FormControl('', [
       Validators.required,
       Validators.pattern(Constants.EMAIL_PATTERN),
@@ -32,9 +32,9 @@ export class SignupComponent implements OnInit {
     ]),
   });
 
-  loading: boolean = false;
-  linkSent: boolean = false;
-  error: string = '';
+  loading = false;
+  linkSent = false;
+  error = '';
   querySubscription!: Subscription;
 
   constructor(

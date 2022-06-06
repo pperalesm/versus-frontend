@@ -1,7 +1,7 @@
 <app-wrapper>
   <div *ngIf="linkSent" class="h1h2-container">
-    <h1>{{ "AccountCreated" | translate }}</h1>
-    <h2>{{ "ActivationLinkSent" | translate }}</h2>
+    <h1 class="success">{{ "AccountCreated" | translate }}</h1>
+    <h3>{{ "ActivationLinkSent" | translate }}</h3>
   </div>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
   <mat-card-content *ngIf="!loading && !linkSent">

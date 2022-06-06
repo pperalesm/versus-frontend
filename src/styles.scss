@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+.success {
+  color: green;
+}
+
 button:active:enabled {
   -webkit-transform: translateY(1px);
   transform: translateY(1px);

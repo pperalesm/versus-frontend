@@ -1,6 +1,9 @@
 <app-wrapper>
-  <h1 *ngIf="!loading" class="h1-container">
+  <h1 *ngIf="!loading && !error" class="h1-container success">
     {{ "AccountActivated" | translate }}
   </h1>
+  <mat-error *ngIf="error" class="error-container">
+    {{ error | translate }}
+  </mat-error>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
 </app-wrapper>

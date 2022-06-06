@@ -38,6 +38,20 @@ const CHECK_USERNAME = gql`
   }
 `;
 
+const ACTIVATE_ACCOUNT = gql`
+  mutation ActivateAccount($id: String!, $token: String!) {
+    activateAccount(activateAccountDto: { id: $id, token: $token }) {
+      email
+      username
+      avatarPath
+      role
+      active
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -75,5 +89,12 @@ export class AccountsService {
         catchError(() => of(null)),
       );
     };
+  }
+
+  activateAccount(id: string, token: string) {
+    return this.apollo.mutate<{ activateAccount: Account }>({
+      mutation: ACTIVATE_ACCOUNT,
+      variables: { id: id, token: token },
+    });
   }
 }
