@@ -17,25 +17,10 @@ export function createApollo(httpLink: HttpLink): NamedOptions {
     },
   }));
 
-  const auth = setContext(() => {
-    const token = localStorage.getItem('token');
-
-    if (token === null) {
-      return {};
-    } else {
-      return {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-    }
-  });
-
   return {
     accountsApi: {
       link: ApolloLink.from([
         basic,
-        auth,
         httpLink.create({ uri: environment.ACCOUNTS_URL + '/graphql' }),
       ]),
       cache: new InMemoryCache(),

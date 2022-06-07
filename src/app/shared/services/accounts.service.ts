@@ -4,6 +4,7 @@ import {
   AsyncValidatorFn,
   ValidationErrors,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Apollo, ApolloBase, gql } from 'apollo-angular';
 import { catchError, map, Observable, of, tap } from 'rxjs';
 import { Account } from '../models/account.model';
@@ -76,7 +77,7 @@ export class AccountsService {
   apollo: ApolloBase;
   authUser?: Account;
 
-  constructor(private apolloProvider: Apollo) {
+  constructor(private apolloProvider: Apollo, private router: Router) {
     this.apollo = apolloProvider.use('accountsApi');
     const authUserString = localStorage.getItem('authUser');
     if (authUserString) {
@@ -139,5 +140,6 @@ export class AccountsService {
     this.authUser = undefined;
     localStorage.removeItem('token');
     localStorage.removeItem('authUser');
+    this.router.navigate(['/auth/login']);
   }
 }
