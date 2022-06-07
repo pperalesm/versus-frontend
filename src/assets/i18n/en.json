@@ -27,13 +27,14 @@
   "AccountCreated": "Your account has been successfully created!",
   "PasswordChanged": "Your password has been successfully changed!",
   "ChangePassword": "Change my password",
-  "ActivationLinkSent": "An activation link has been sent to your email address.",
-  "ResetPasswordLinkSent": "A link to reset your password has been sent to your email address.",
+  "ActivationLinkSent": "An activation link has been sent to your email address",
+  "ResetPasswordLinkSent": "A link to reset your password has been sent to your email address",
   "GetNewPassword": "Get me a new password",
   "Copyright": "Ⓒ 2022 VERSUS All rights reserved",
   "DevelopedBy": "Developed by ",
   "DefaultError": "An unexpected error occurred",
-  "EmailConflictError": "This email address is already in use",
+  "EmailConflictError": "Email address already in use",
+  "EmailNotFoundError": "Email address invalid",
   "LinkNotFoundError": "Activation link invalid",
   "LoginCredentialsError": "Incorrect account credentials"
 }

@@ -68,6 +68,12 @@ const RESET_PASSWORD = gql`
   }
 `;
 
+const FORGOT_PASSWORD = gql`
+  query ForgotPassword($email: String!) {
+    forgotPassword(email: $email)
+  }
+`;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -145,6 +151,13 @@ export class AccountsService {
     return this.apollo.mutate<{ resetPassword: Account }>({
       mutation: RESET_PASSWORD,
       variables: { id: id, token: token, password: password },
+    });
+  }
+
+  forgotPassword(email: string) {
+    return this.apollo.query<{ forgotPassword: boolean }>({
+      query: FORGOT_PASSWORD,
+      variables: { email: email },
     });
   }
 }
