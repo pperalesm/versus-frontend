@@ -4,6 +4,11 @@
   </h1>
   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
   <mat-card-content *ngIf="!loading && !changed">
+    <mat-error *ngIf="error">
+      {{ error | translate }}
+      <br />
+      <br />
+    </mat-error>
     <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="outline">

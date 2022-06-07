@@ -13,6 +13,6 @@ export const Constants = {
   BAD_REQUEST: 'Bad Request',
   UNAUTHORIZED: 'Unauthorized',
   EMAIL_CONFLICT_ERROR: 'EmailConflictError',
-  ACTIVATION_NOT_FOUND_ERROR: 'ActivationNotFoundError',
+  LINK_NOT_FOUND_ERROR: 'LinkNotFoundError',
   LOGIN_CREDENTIALS_ERROR: 'LoginCredentialsError',
 };

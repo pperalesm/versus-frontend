@@ -27,7 +27,7 @@ export class ActivateComponent implements OnInit {
         },
         error: (err) => {
           if (err.message == Constants.NOT_FOUND) {
-            this.error = Constants.ACTIVATION_NOT_FOUND_ERROR;
+            this.error = Constants.LINK_NOT_FOUND_ERROR;
           } else {
             this.error = Constants.DEFAULT_ERROR;
           }

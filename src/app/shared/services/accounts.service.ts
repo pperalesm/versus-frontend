@@ -22,13 +22,7 @@ const CREATE_ACCOUNT = gql`
         password: $password
       }
     ) {
-      email
       username
-      avatarPath
-      role
-      active
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -42,13 +36,7 @@ const CHECK_USERNAME = gql`
 const ACTIVATE_ACCOUNT = gql`
   mutation ActivateAccount($id: String!, $token: String!) {
     activateAccount(activateAccountDto: { id: $id, token: $token }) {
-      email
       username
-      avatarPath
-      role
-      active
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -66,6 +54,16 @@ const LOG_IN = gql`
         createdAt
         updatedAt
       }
+    }
+  }
+`;
+
+const RESET_PASSWORD = gql`
+  mutation ResetPassword($id: String!, $token: String!, $password: String!) {
+    resetPassword(
+      resetPasswordDto: { id: $id, token: $token, password: $password }
+    ) {
+      username
     }
   }
 `;
@@ -141,5 +139,12 @@ export class AccountsService {
     localStorage.removeItem('token');
     localStorage.removeItem('authUser');
     this.router.navigate(['/auth/login']);
+  }
+
+  resetPassword(id: string, token: string, password: string) {
+    return this.apollo.mutate<{ resetPassword: Account }>({
+      mutation: RESET_PASSWORD,
+      variables: { id: id, token: token, password: password },
+    });
   }
 }

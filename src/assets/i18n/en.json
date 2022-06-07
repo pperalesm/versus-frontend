@@ -34,6 +34,6 @@
   "DevelopedBy": "Developed by ",
   "DefaultError": "An unexpected error occurred",
   "EmailConflictError": "This email address is already in use",
-  "ActivationNotFoundError": "Activation link invalid",
+  "LinkNotFoundError": "Activation link invalid",
   "LoginCredentialsError": "Incorrect account credentials"
 }
