@@ -1,1 +1,10 @@
-<mat-card class="overlay border-primary" align="center"> </mat-card>
+<mat-card class="overlay border-primary" align="center">
+  <div class="games-list"></div>
+  <mat-drawer-container class="game-description overlay">
+    <mat-drawer class="reviews-info overlay" #drawer mode="side" position="end">
+    </mat-drawer>
+    <button mat-fab class="reviews-button" mat-button (click)="drawer.toggle()">
+      <mat-icon>star_border</mat-icon>
+    </button>
+  </mat-drawer-container>
+</mat-card>

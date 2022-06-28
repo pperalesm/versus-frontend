@@ -1,9 +1,42 @@
 .mat-card {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
-  width: 60vw;
-  padding: 50px 75px;
-  border-radius: 25px;
+  padding: 0px;
+  width: 70vw;
+  height: 786px;
+  display: flex;
+}
+
+.games-list {
+  width: 400px;
+  border-right: 1px solid silver;
+}
+
+.game-description {
+  flex-grow: 1;
+}
+
+.reviews-info {
+  width: 600px;
+  border-left: 1px solid silver;
+}
+
+.reviews-button {
+  position: absolute;
+  right: 0px;
+  margin: 20px;
+  width: 60px;
+  height: 60px;
+
+  &::ng-deep .mat-button-wrapper {
+    padding: 0;
+
+    .mat-icon {
+      font-size: 40px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+    }
+  }
 }

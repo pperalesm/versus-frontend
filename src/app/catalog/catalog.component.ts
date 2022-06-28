@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog.component.scss'],
 })
 export class CatalogComponent implements OnInit {
+  reviewsOpen = true;
+
   constructor() {}
 
   ngOnInit(): void {}

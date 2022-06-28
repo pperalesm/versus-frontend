@@ -21,14 +21,25 @@ button:active:enabled {
 }
 
 .border-primary {
-  border: 1px solid $default-primary;
+  border: 1px solid silver;
 }
 
 .border-accent {
-  border: 1px solid $default-accent;
+  border: 1px solid gold;
 }
 
-.mat-raised-button.mat-primary {
+.mat-fab {
+  background: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    from(color.adjust($default-accent, $lightness: -40%)),
+    to($default-accent)
+  );
+  text-shadow: 1px 1px 0 #000;
+}
+
+.mat-raised-button.mat-primary:enabled {
   border: 1px solid $default-primary;
   background: -webkit-gradient(
     linear,
