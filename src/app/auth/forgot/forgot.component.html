@@ -13,7 +13,12 @@
       <div>
         <mat-form-field appearance="outline" color="primary">
           <mat-label>{{ "Email" | translate }}</mat-label>
-          <input matInput type="text" formControlName="emailFormControl" />
+          <input
+            matInput
+            matInputAutofocus
+            type="text"
+            formControlName="emailFormControl"
+          />
         </mat-form-field>
       </div>
       <div>

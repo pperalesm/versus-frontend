@@ -4,10 +4,11 @@ import { TermsComponent } from './components/terms/terms.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 @NgModule({
-  declarations: [TermsComponent],
+  declarations: [TermsComponent, AutofocusDirective],
   imports: [CommonModule, TranslateModule, MatDialogModule, MatButtonModule],
-  exports: [TermsComponent],
+  exports: [TermsComponent, AutofocusDirective],
 })
 export class SharedModule {}
