@@ -22,7 +22,16 @@ const CREATE_ACCOUNT = gql`
         password: $password
       }
     ) {
-      username
+      token
+      account {
+        email
+        username
+        avatarPath
+        role
+        active
+        createdAt
+        updatedAt
+      }
     }
   }
 `;
@@ -36,7 +45,16 @@ const CHECK_USERNAME = gql`
 const ACTIVATE_ACCOUNT = gql`
   mutation ActivateAccount($id: String!, $token: String!) {
     activateAccount(activateAccountDto: { id: $id, token: $token }) {
-      username
+      token
+      account {
+        email
+        username
+        avatarPath
+        role
+        active
+        createdAt
+        updatedAt
+      }
     }
   }
 `;
@@ -74,6 +92,20 @@ const FORGOT_PASSWORD = gql`
   }
 `;
 
+const DELETE_ACCOUNT = gql`
+  mutation DeleteAccount {
+    deleteAccount {
+      username
+    }
+  }
+`;
+
+const SEND_ACTIVATION_EMAIL = gql`
+  query SendActivationEmail {
+    sendActivationEmail
+  }
+`;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -90,14 +122,31 @@ export class AccountsService {
   }
 
   createAccount(email: string, username: string, password: string) {
-    return this.apollo.mutate<{ createAccount: Account }>({
-      mutation: CREATE_ACCOUNT,
-      variables: {
-        email: email,
-        username: username,
-        password: password,
-      },
-    });
+    return this.apollo
+      .mutate<{
+        createAccount: { token: string; account: Account };
+      }>({
+        mutation: CREATE_ACCOUNT,
+        variables: {
+          email: email,
+          username: username,
+          password: password,
+        },
+      })
+      .pipe(
+        tap(({ data }) => {
+          if (data?.createAccount.account) {
+            this.authUser = data.createAccount.account;
+            localStorage.setItem(
+              'authUser',
+              JSON.stringify(data.createAccount.account),
+            );
+          }
+          if (data?.createAccount.token) {
+            localStorage.setItem('token', data.createAccount.token);
+          }
+        }),
+      );
   }
 
   checkUsername(username: string) {
@@ -119,10 +168,27 @@ export class AccountsService {
   }
 
   activateAccount(id: string, token: string) {
-    return this.apollo.mutate<{ activateAccount: Account }>({
-      mutation: ACTIVATE_ACCOUNT,
-      variables: { id: id, token: token },
-    });
+    return this.apollo
+      .mutate<{
+        activateAccount: { token: string; account: Account };
+      }>({
+        mutation: ACTIVATE_ACCOUNT,
+        variables: { id: id, token: token },
+      })
+      .pipe(
+        tap(({ data }) => {
+          if (data?.activateAccount.account) {
+            this.authUser = data.activateAccount.account;
+            localStorage.setItem(
+              'authUser',
+              JSON.stringify(data.activateAccount.account),
+            );
+          }
+          if (data?.activateAccount.token) {
+            localStorage.setItem('token', data.activateAccount.token);
+          }
+        }),
+      );
   }
 
   login(user: string, password: string) {
@@ -130,12 +196,13 @@ export class AccountsService {
       .query<{ login: { token: string; account: Account } }>({
         query: LOG_IN,
         variables: { user: user, password: password },
+        fetchPolicy: 'no-cache',
       })
       .pipe(
         tap(({ data }) => {
           this.authUser = data.login.account;
-          localStorage.setItem('token', data.login.token);
           localStorage.setItem('authUser', JSON.stringify(data.login.account));
+          localStorage.setItem('token', data.login.token);
         }),
       );
   }
@@ -158,6 +225,26 @@ export class AccountsService {
     return this.apollo.query<{ forgotPassword: boolean }>({
       query: FORGOT_PASSWORD,
       variables: { email: email },
+      fetchPolicy: 'no-cache',
     });
+  }
+
+  sendActivationEmail() {
+    return this.apollo.query<{ sendActivationEmail: boolean }>({
+      query: SEND_ACTIVATION_EMAIL,
+      fetchPolicy: 'no-cache',
+    });
+  }
+
+  deleteAccount() {
+    return this.apollo
+      .mutate<{ deleteAccount: Account }>({
+        mutation: DELETE_ACCOUNT,
+      })
+      .pipe(
+        tap(() => {
+          this.logout();
+        }),
+      );
   }
 }

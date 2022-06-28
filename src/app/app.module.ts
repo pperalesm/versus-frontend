@@ -17,6 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GraphQLModule } from './graphql.module';
 import { JwtTokenInterceptor } from './shared/interceptors/jwt-token.interceptor';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -35,7 +37,9 @@ import { JwtTokenInterceptor } from './shared/interceptors/jwt-token.interceptor
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
+    MatMenuModule,
     GraphQLModule,
+    MatIconModule,
   ],
   providers: [
     {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 import { AccountsService } from '../shared/services/accounts.service';
 
 @Component({
@@ -29,5 +30,13 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.accountsService.logout();
+  }
+
+  sendActivationEmail() {
+    firstValueFrom(this.accountsService.sendActivationEmail());
+  }
+
+  deleteAccount() {
+    firstValueFrom(this.accountsService.deleteAccount());
   }
 }

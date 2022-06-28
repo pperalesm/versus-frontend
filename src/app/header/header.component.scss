@@ -3,6 +3,18 @@ button {
   margin-right: 0.5vw;
 }
 
+.menu-button {
+  margin: 0px;
+}
+
+.menu-icon {
+  margin-right: 5px;
+}
+
+.danger {
+  color: red;
+}
+
 .header {
   z-index: 10;
   display: flex;

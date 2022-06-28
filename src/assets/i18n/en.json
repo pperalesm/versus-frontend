@@ -36,5 +36,7 @@
   "EmailConflictError": "Email address already in use",
   "EmailNotFoundError": "Email address invalid",
   "LinkNotFoundError": "Activation link invalid",
-  "LoginCredentialsError": "Incorrect account credentials"
+  "LoginCredentialsError": "Incorrect account credentials",
+  "SendActivationEmail": "Send activation email",
+  "DeleteAccount": "Delete account"
 }

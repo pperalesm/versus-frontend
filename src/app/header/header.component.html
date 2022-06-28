@@ -9,11 +9,35 @@
     <button
       *ngIf="accountsService.authUser"
       mat-raised-button
+      [matMenuTriggerFor]="profileMenu"
       color="accent"
-      (click)="logout()"
     >
-      {{ "LogOut" | translate }}
+      <mat-icon class="menu-icon">account_circle</mat-icon>
+      {{ accountsService.authUser.username }}
     </button>
+    <mat-menu #profileMenu="matMenu" xPosition="before">
+      <button
+        *ngIf="!accountsService.authUser?.active"
+        class="menu-button"
+        mat-menu-item
+        (click)="sendActivationEmail()"
+      >
+        <mat-icon class="menu-icon">email</mat-icon>
+        {{ "SendActivationEmail" | translate }}
+      </button>
+      <button class="menu-button" mat-menu-item (click)="logout()">
+        <mat-icon class="menu-icon">directions_run</mat-icon>
+        {{ "LogOut" | translate }}
+      </button>
+      <button
+        class="menu-button danger"
+        mat-menu-item
+        (click)="deleteAccount()"
+      >
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        {{ "DeleteAccount" | translate }}
+      </button>
+    </mat-menu>
     <button
       *ngIf="!accountsService.authUser"
       mat-raised-button
