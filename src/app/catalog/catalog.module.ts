@@ -10,9 +10,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { GamesListComponent } from './games-list/games-list.component';
 
 @NgModule({
-  declarations: [CatalogComponent],
+  declarations: [CatalogComponent, GamesListComponent],
   imports: [
     CommonModule,
     CatalogRoutingModule,
@@ -24,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
+    MatTabsModule,
   ],
 })
 export class CatalogModule {}
