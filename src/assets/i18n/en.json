@@ -38,5 +38,11 @@
   "LinkNotFoundError": "Activation link invalid",
   "LoginCredentialsError": "Incorrect account credentials",
   "SendActivationEmail": "Send activation email",
-  "DeleteAccount": "Delete account"
+  "DeleteAccount": "Delete account",
+  "All": "All",
+  "Pending": "Pending",
+  "Played": "Played",
+  "SearchGamesByTitle": "Search by title",
+  "MustLogIn": "You must be logged in",
+  "CheckGameReviews": "Check the reviews!"
 }

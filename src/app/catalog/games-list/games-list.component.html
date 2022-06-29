@@ -7,9 +7,80 @@
   >
     <mat-icon>filter_list</mat-icon>
   </button>
-  <mat-tab-group>
-    <mat-tab label="All">Content 1</mat-tab>
-    <mat-tab label="Pending">Content 2</mat-tab>
-    <mat-tab label="Played">Content 3</mat-tab>
+  <mat-tab-group color="accent">
+    <mat-tab label="{{ 'All' | translate }}">
+      <mat-form-field class="search-field" appearance="outline">
+        <mat-label>{{ "SearchGamesByTitle" | translate }}</mat-label>
+        <input matInput matInputAutofocus type="text" />
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <mat-list dense class="infinite-list">
+        <mat-list-item>
+          <img
+            src="https://picfiles.alphacoders.com/126/thumb-12653.jpg"
+            class="img-icon"
+          />
+          <p class="item-text">World of Warcraft</p>
+          <button mat-icon-button class="menu-icon">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <img
+            src="https://picfiles.alphacoders.com/126/thumb-12653.jpg"
+            class="img-icon"
+          />
+          <p class="item-text">World of Warcraft</p>
+          <button mat-icon-button class="menu-icon">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <img
+            src="https://picfiles.alphacoders.com/126/thumb-12653.jpg"
+            class="img-icon"
+          />
+          <p class="item-text">World of Warcraft</p>
+          <button mat-icon-button class="menu-icon">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab [disabled]="!accountsService.authUser">
+      <ng-template mat-tab-label>
+        <label
+          [ngClass]="{ 'tab-label': accountsService.authUser }"
+          matTooltip="{{ 'MustLogIn' | translate }}"
+          matTooltipClass="red-tooltip"
+          [matTooltipDisabled]="!!accountsService.authUser"
+        >
+          {{ "Pending" | translate }}
+        </label>
+      </ng-template>
+      <mat-form-field class="search-field" appearance="outline" color="primary">
+        <mat-label>{{ "SearchGamesByTitle" | translate }}</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab [disabled]="!accountsService.authUser">
+      <ng-template mat-tab-label>
+        <label
+          [ngClass]="{ 'tab-label': accountsService.authUser }"
+          matTooltip="{{ 'MustLogIn' | translate }}"
+          matTooltipClass="red-tooltip"
+          [matTooltipDisabled]="!!accountsService.authUser"
+        >
+          {{ "Played" | translate }}
+        </label>
+      </ng-template>
+      <mat-form-field class="search-field" appearance="outline" color="primary">
+        <mat-label>{{ "SearchGamesByTitle" | translate }}</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+    </mat-tab>
   </mat-tab-group>
 </div>

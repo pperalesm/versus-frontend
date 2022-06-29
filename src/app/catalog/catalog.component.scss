@@ -7,6 +7,7 @@
   width: 70vw;
   height: 786px;
   display: flex;
+  border-radius: 25px;
 }
 
 .games-list {
@@ -16,17 +17,19 @@
 
 .game-description {
   flex-grow: 1;
+  border-radius: 25px;
 }
 
 .reviews-info {
   width: 600px;
   border-left: 1px solid silver;
+  border-radius: 15px;
 }
 
 .reviews-button {
   position: absolute;
-  right: 0px;
-  margin: 20px;
+  right: 25px;
+  top: 25px;
   width: 60px;
   height: 60px;
 

@@ -4,11 +4,16 @@
   </div>
   <mat-drawer-container class="game-description overlay">
     <mat-drawer class="reviews-info overlay" #drawer mode="side" position="end">
-      Reviews
     </mat-drawer>
-    <button mat-fab class="reviews-button" mat-button (click)="drawer.toggle()">
+    <button
+      mat-fab
+      mat-button
+      matTooltip="{{ 'CheckGameReviews' | translate }}"
+      [matTooltipDisabled]="drawer.opened"
+      class="reviews-button"
+      (click)="drawer.toggle()"
+    >
       <mat-icon>star_border</mat-icon>
     </button>
-    Game description
   </mat-drawer-container>
 </mat-card>

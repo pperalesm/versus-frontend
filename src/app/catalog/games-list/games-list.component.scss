@@ -1,6 +1,11 @@
 ::ng-deep .mat-tab-label {
   width: 120px;
   min-width: 5px !important;
+  color: gold;
+}
+
+.tab-label {
+  cursor: pointer;
 }
 
 .filter-button {
@@ -12,4 +17,55 @@
 
 .container {
   position: relative;
+}
+
+.search-field {
+  display: block;
+  width: 360px;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+::ng-deep .red-tooltip {
+  background: #b71c1c;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 10px;
+}
+
+.item-text {
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
+::ng-deep .mat-tab-label.mat-tab-label-active {
+  opacity: 1;
+}
+
+.infinite-list {
+  margin-top: 0px;
+  padding-top: 0px;
+  max-height: 653px;
+  overflow-y: hidden;
+}
+
+.menu-icon {
+  position: absolute;
+  right: 0px;
+}
+
+.img-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid silver;
+}
+
+::ng-deep .mat-list-base {
+  padding-top: 0px !important;
 }
